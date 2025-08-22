@@ -1,14 +1,14 @@
+Aquí tienes la versión final y pulida del archivo README, con el enlace de GitHub actualizado, los comandos de instalación correctos y las mejoras que hemos discutido.
+
+-----
+
 # **Automated YouTube Publisher: Multi-Channel Content Management**
 
 ## **Streamlining Video Deployment for Professionals**
 
------
-
 [](https://www.python.org/)
 [](https://opensource.org/licenses/MIT)
-[](https://www.google.com/search?q=https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/stargazers)
-
------
+[](https://www.google.com/search?q=https://github.com/SheenyxX/Automated-YouTube-Publisher/stargazers)
 
 **For digital content professionals, manual YouTube uploads are a consistent bottleneck, consuming valuable time that could be better spent on content creation and strategic planning.**
 
@@ -63,53 +63,57 @@ This translates into **significant hours saved weekly** for high-volume content 
 
 -----
 
-## **Important Considerations for Implementation**
-
-While this system automates core publishing tasks, optimal performance relies on understanding its scope and limitations:
-
-1.  **Metadata Quality:** The system accurately deploys the metadata you provide. Its effectiveness (for SEO and engagement) remains dependent on your strategic input and quality assurance.
-2.  **Initial Authentication:** Each new Google Account utilized will require an initial, browser-based authentication step.
-3.  **Post-Upload Enhancements:** This version focuses on core video and metadata upload. Enhancements such as custom **thumbnails**, **end screens**, and **cards** currently require manual addition within YouTube Studio after the automated upload.
-4.  **YouTube API Quota:** The YouTube Data API has daily usage quotas (e.g., approximately 6 video uploads per day with default limits). For higher volumes, a quota increase application to Google may be necessary. The system will indicate if quota limits are reached.
-5.  **Troubleshooting:** While robust, unforeseen issues (e.g., corrupted video files, network interruptions) may cause an upload to fail. Reviewing the `metadata.csv` status and console output will be necessary for diagnosis and resolution.
-
------
-
 ## **Project Structure**
 
 Your project directory should be organized as follows for optimal functionality:
 
 ```
-YourProjectName/
-├── venv/                           # Python Virtual Environment
-├── videos/                         # Directory to store your video files
+youtube-uploader/
+├── venv/                      # Python Virtual Environment
+├── videos/                    # Directory to store your video files
 │   └── your_video_file.mp4
-├── client_secrets.json             # Google API Credentials
-├── metadata.csv                    # Your video metadata configuration
-├── requirements.txt                # List of Python dependencies
+├── client_secrets.json        # Google API Credentials
+├── metadata.csv               # Your video metadata configuration
+├── requirements.txt           # List of Python dependencies
 ├── token_your.email@gmail.com.pickle # Authentication token files
-├── Upload Videos.py                # Your main Python script
-└── .gitignore                      # Git ignore file
+├── Upload Videos.py           # Your main Python script
+└── .gitignore                 # Git ignore file
 ```
 
 -----
 
 ## **Getting Started**
 
-To begin optimizing your YouTube publishing workflow:
+To begin optimizing your YouTube publishing workflow, follow these detailed instructions.
 
-1.  **Retrieve the Project:**
-    ```bash
-    git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-    cd YOUR_REPO_NAME
-    python -m venv venv && source venv/bin/activate # For Windows: .\venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
-2.  **Configure API Access:** Set up your Google Cloud Project, enable the YouTube Data API v3, and download your `client_secrets.json` file. Place this file in the project's root directory. (Detailed instructions are available in the full documentation.)
-3.  **Execute the Script:**
-    ```bash
-    python "Upload Videos.py"
-    ```
+### **Paso 1: Preparación del Entorno**
+
+| Tarea | macOS (Terminal) | Windows (Símbolo del sistema o PowerShell) |
+| :--- | :--- | :--- |
+| **Clonar el repositorio** | `git clone https://github.com/SheenyxX/Automated-YouTube-Publisher.git youtube-uploader` | `git clone https://github.com/SheenyxX/Automated-YouTube-Publisher.git youtube-uploader` |
+| **Acceder al directorio del proyecto** | `cd youtube-uploader` | `cd youtube-uploader` |
+| **Crear entorno virtual** | `python3 -m venv venv` | `python -m venv venv` |
+| **Activar el entorno virtual** | `source venv/bin/activate` | `venv\Scripts\activate` |
+| **Instalar dependencias** | `pip install -r requirements.txt` | `pip install -r requirements.txt` |
+
+### **Paso 2: Configuración de la API de YouTube**
+
+Este paso es crucial para que el script pueda interactuar con tu cuenta de YouTube.
+
+1.  **Accede a la Consola de Google Cloud:** Ve a [console.cloud.google.com](https://console.cloud.google.com/).
+2.  **Crea un nuevo proyecto** y dale un nombre.
+3.  **Habilita la API:** En la Biblioteca de API, busca y habilita la **"YouTube Data API v3"**.
+4.  **Configura la pantalla de consentimiento de OAuth:** Ve a "APIs y servicios" \> "Pantalla de consentimiento de OAuth", selecciona "Usuario externo" y completa los datos requeridos.
+5.  **Crea credenciales:** Ve a "Credenciales" \> "+ Crear credenciales" \> "ID de cliente de OAuth". Selecciona **"Aplicación de escritorio"** y haz clic en "Crear".
+6.  **Descarga el archivo `client_secrets.json`** y colócalo en la raíz de tu proyecto.
+
+### **Paso 3: Preparación Final y Ejecución**
+
+1.  **Organiza tus archivos:** Coloca tus videos en la carpeta **`videos/`** y crea un archivo **`metadata.csv`** en la raíz del proyecto. Asegúrate de que las columnas coincidan con las del código (ej. `filename`, `title`, `description`, `tags`, `privacy_status`, `made_for_kids_flag`, `uploader_account_email`, `upload_status`).
+2.  **Ejecuta el script:** Usa el comando apropiado para tu sistema operativo.
+      * **macOS:** `python3 "Upload Videos.py"`
+      * **Windows:** `python "Upload Videos.py"`
+3.  **Sigue el flujo de autenticación** en tu navegador la primera vez que uses cada cuenta de Google.
 
 -----
 
@@ -126,12 +130,10 @@ This solution is particularly beneficial for:
 
 ## **Community & Licensing**
 
-Contributions are welcome. This project is licensed under the MIT License, promoting flexible use and collaboration. Please refer to the [LICENSE](https://www.google.com/search?q=LICENSE) file for complete details.
+Contributions are welcome. This project is licensed under the MIT License, promoting flexible use and collaboration. Please refer to the [LICENSE](https://www.google.com/search?q=https://github.com/SheenyxX/Automated-YouTube-Publisher/blob/main/LICENSE) file for complete details.
 
 -----
 
 ## **Support**
 
 For inquiries or assistance, please open an issue on our GitHub repository.
-
------

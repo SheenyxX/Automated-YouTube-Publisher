@@ -1,7 +1,3 @@
-Aquí tienes la versión final y pulida del archivo README, con el enlace de GitHub actualizado, los comandos de instalación correctos y las mejoras que hemos discutido.
-
------
-
 # **Automated YouTube Publisher: Multi-Channel Content Management**
 
 ## **Streamlining Video Deployment for Professionals**
